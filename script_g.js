@@ -229,7 +229,7 @@ style.textContent = `
 
 @keyframes blink-yellow {
     0% { background-color: transparent; }
-    50% { background-color: rgba(255, 255, 0, 0.9); }
+    50% { background-color: rgba(255, 255, 0, 0.3); }
     100% { background-color: transparent; }
 }
 `;
