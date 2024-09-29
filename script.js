@@ -303,6 +303,7 @@
 
         let currentIndex = 0;
 
+
         function populateDropdown(filter = '') {
             dropdown.innerHTML = '';
             data.forEach((item, index) => {
@@ -361,16 +362,24 @@
             document.querySelector('.openButton').click();
             // Seleciona o elemento textarea pelo seletor
             const textarea = document.querySelector('textarea.text-area');
+                // Seleciona o primeiro elemento com a classe 'anticon anticon-plus'
+            const element = document.querySelector('.anticon.anticon-plus');
+
+            // Verifica se o elemento foi encontrado e simula um clique
+            if (element) {
+                element.click();
+            } else {
+                console.error("Elemento com a classe 'anticon anticon-plus' não encontrado.");
+                return;
+            }
 
             if (textarea) {
                 // Define o valor do textarea para o texto da mensagem
-                textarea.value = messageContainer.innerText; // Corrigido aqui
+                textarea.value = messageContainer.innerText; 
 
                 // Dispara um evento de input para garantir que a mudança seja registrada
                 const eventoInput = new Event('input', { bubbles: true });
                 textarea.dispatchEvent(eventoInput);
-
-            // Here you can add code to send this data to a server or perform any other necessary actions
             }
         });
 
