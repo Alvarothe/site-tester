@@ -347,7 +347,6 @@
 
         finalizeButton.addEventListener('click', () => {
             const selectedItem = data[currentIndex];
-            const nomeDoContato = isTitular ? 'Titular' : nomeDoContato.value.trim();
 
             const atendimentoInfo = {
                 etiqueta: selectedItem.etiqueta,
