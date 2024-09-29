@@ -182,7 +182,7 @@
             .show {
                 display: block;
             }
-            .arrow-button {
+            .openButton {
                 position: fixed;
                 top: 380px;
                 right: 10px;
@@ -192,7 +192,7 @@
                 height: 50px;
                 transition: transform 0.3s ease;
             }
-            .arrow-button.flipped {
+            .openButton.flipped {
                 transform: scaleX(-1);
             }
             .finalize-button {
@@ -220,9 +220,9 @@
         document.head.appendChild(style);
     }
 
-    function createArrowButton() {
+    function createToggleOpenButton() {
         const container = document.createElement('div');
-        container.className = 'arrow-button';
+        container.className = 'openButton';
 
         container.innerHTML = `
             <img src="https://pngmaterial.com/dvsxyz02/uploads/curvy-arrow-png.png" alt="Botão de Seta" style="width: 100%; height: 100%;">
@@ -239,6 +239,7 @@
             this.classList.toggle('flipped');
         };
 
+        
         // Adicionar o contêiner ao corpo do documento
         document.body.appendChild(container);
     }
@@ -257,11 +258,14 @@
                 </label>
                 <span class="toggle-label">Sim</span>
             </div>
+
             <input type="text" id="nomeDoContato" placeholder="Nome do contato" autocomplete="off" disabled>
+
             <div class="dropdown">
                 <input type="text" class="search-input" placeholder="Pesquisar título...">
                 <div class="dropdown-content" id="titleDropdown"></div>
             </div>
+
             <div class="content-wrapper">
                 <div id="messageContainer" class="message-content"></div>
                 <div class="info-container">
@@ -281,7 +285,8 @@
                         <p class="etiqueta">Etiqueta: <span id="etiquetaValor"></span></p>
                     </div>
                 </div>
-                 <button id="finalizeButton" class="finalize-button">Finalizar Atendimento</button>
+                
+                <button id="finalizeButton" class="finalize-button">Finalizar Atendimento</button>
             </div>
         `;
 
@@ -339,10 +344,11 @@
         });
 
         const finalizeButton = document.getElementById('finalizeButton');
+
         finalizeButton.addEventListener('click', () => {
             const selectedItem = data[currentIndex];
             const isTitular = titularToggle.checked;
-            const nomeContato = isTitular ? 'Titular' : nomeDoContato.value.trim();
+            const nomeDoContato = isTitular ? 'Titular' : nomeDoContato.value.trim();
 
             const atendimentoInfo = {
                 etiqueta: selectedItem.etiqueta,
@@ -354,7 +360,7 @@
             };
 
             console.log('Informações do atendimento:', atendimentoInfo);
-            
+            document.querySelector('.openButton').click();
             // Seleciona o elemento textarea pelo seletor
             const textarea = document.querySelector('textarea.text-area');
 
@@ -382,12 +388,9 @@
 
         updateMessage();
     }
-
+    
     createStyles();
-    createArrowButton();
+    createToggleOpenButton();
     const data = await fetchJsonData();
     createInterface(data);
 })();
-
-
-
