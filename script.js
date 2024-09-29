@@ -188,7 +188,7 @@
                 right: 10px;
                 z-index: 1000;
                 cursor: pointer;
-                width: 50px;
+                width: 25px;
                 height: 50px;
                 transition: transform 0.3s ease;
             }
@@ -257,7 +257,7 @@
                 </label>
                 <span class="toggle-label">Sim</span>
             </div>
-            <input type="text" id="inputNome" placeholder="Nome do contato" autocomplete="off" disabled>
+            <input type="text" id="nomeDoContato" placeholder="Nome do contato" autocomplete="off" disabled>
             <div class="dropdown">
                 <input type="text" class="search-input" placeholder="Pesquisar título...">
                 <div class="dropdown-content" id="titleDropdown"></div>
@@ -287,7 +287,7 @@
 
         document.body.appendChild(container);
 
-        const inputNome = document.getElementById('inputNome');
+        const nomeDoContato = document.getElementById('nomeDoContato');
         const messageContainer = document.getElementById('messageContainer');
         const titularToggle = document.getElementById('titularToggle');
         const externoValue = document.getElementById('externoValue');
@@ -316,11 +316,11 @@
         }
 
         titularToggle.addEventListener('change', () => {
-            inputNome.disabled = titularToggle.checked;
+            nomeDoContato.disabled = titularToggle.checked;
             updateMessage();
         });
 
-        inputNome.addEventListener('input', updateMessage);
+        nomeDoContato.addEventListener('input', updateMessage);
 
         searchInput.addEventListener('focus', () => {
             populateDropdown();
@@ -342,7 +342,7 @@
         finalizeButton.addEventListener('click', () => {
             const selectedItem = data[currentIndex];
             const isTitular = titularToggle.checked;
-            const nomeContato = isTitular ? 'Titular' : inputNome.value.trim();
+            const nomeContato = isTitular ? 'Titular' : nomeDoContato.value.trim();
 
             const atendimentoInfo = {
                 etiqueta: selectedItem.etiqueta,
@@ -354,8 +354,20 @@
             };
 
             console.log('Informações do atendimento:', atendimentoInfo);
+            
+            // Seleciona o elemento textarea pelo seletor
+            const textarea = document.querySelector('textarea.text-area');
+
+            if (textarea) {
+                // Define o valor do textarea para o texto da mensagem
+                textarea.value = messageContainer.innerText; // Corrigido aqui
+
+                // Dispara um evento de input para garantir que a mudança seja registrada
+                const eventoInput = new Event('input', { bubbles: true });
+                textarea.dispatchEvent(eventoInput);
 
             // Here you can add code to send this data to a server or perform any other necessary actions
+            }
         });
 
         function updateMessage() {
@@ -364,7 +376,7 @@
             aguardarValue.textContent = selectedItem.aguardar ? 'Sim' : 'Não';
             etiquetaValor.textContent = selectedItem.etiqueta;
 
-            let titularMessage = titularToggle.checked ? 'Titular' : inputNome.value.trim();
+            let titularMessage = titularToggle.checked ? 'Titular' : nomeDoContato.value.trim();
             messageContainer.innerHTML = `${titularMessage ? titularMessage + ' entrou em contato e ' : ''}${selectedItem.mensagem}`;
         }
 
