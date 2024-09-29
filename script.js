@@ -347,7 +347,6 @@
 
         finalizeButton.addEventListener('click', () => {
             const selectedItem = data[currentIndex];
-            const isTitular = titularToggle.checked;
             const nomeDoContato = isTitular ? 'Titular' : nomeDoContato.value.trim();
 
             const atendimentoInfo = {
