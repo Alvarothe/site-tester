@@ -395,9 +395,12 @@
 
         updateMessage();
     }
-    
+    //teste
     createStyles();
     createToggleOpenButton();
     const data = await fetchJsonData();
     createInterface(data);
+    setInterval(() => {
+        console.log('olá, testando?')
+    }, 10000);
 })();
