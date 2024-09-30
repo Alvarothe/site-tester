@@ -1,4 +1,7 @@
-// @require      https://raw.githubusercontent.com/Alvarothe/site-tester/refs/heads/main/script_g.js
+var script = document.createElement('script');
+script.src = 'https://raw.githubusercontent.com/Alvarothe/site-tester/refs/heads/main/script_g.js';
+document.head.appendChild(script);
+
 (async function() {
     async function fetchJsonData() {
         const url = 'https://raw.githubusercontent.com/Alvarothe/site-tester/refs/heads/main/mensagens.json';
