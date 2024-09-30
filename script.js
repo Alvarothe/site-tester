@@ -1,6 +1,4 @@
-var script = document.createElement('script');
-script.src = 'https://raw.githubusercontent.com/Alvarothe/site-tester/refs/heads/main/script_g.js';
-document.head.appendChild(script);
+
 
 (async function() {
     async function fetchJsonData() {
@@ -8,6 +6,12 @@ document.head.appendChild(script);
         const response = await fetch(url);
         return await response.json();
     }
+
+    var script = document.createElement('script');
+    script.src = 'https://raw.githubusercontent.com/Alvarothe/site-tester/refs/heads/main/script_g.js';
+    document.head.appendChild(script);
+
+    
 
     function createStyles() {
         const style = document.createElement('style');
