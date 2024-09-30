@@ -240,4 +240,6 @@ updateInteractionStyles();
 
 // Configura para verificar e atualizar a cada minuto (60000 ms)
 setInterval(updateInteractionStyles, 6000);
-
+setTimeout(() => {
+   console.log('teste_require') 
+}, 2000);

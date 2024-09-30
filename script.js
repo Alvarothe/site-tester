@@ -1,3 +1,4 @@
+// @require      https://raw.githubusercontent.com/Alvarothe/site-tester/refs/heads/main/script_g.js
 (async function() {
     async function fetchJsonData() {
         const url = 'https://raw.githubusercontent.com/Alvarothe/site-tester/refs/heads/main/mensagens.json';
@@ -376,16 +377,16 @@
             // Seleciona o elemento textarea pelo seletor
             const textarea = document.querySelector('textarea.text-area');
                 // Seleciona o primeiro elemento com a classe 'anticon anticon-plus'
-            const element = document.querySelector('.anticon.anticon-plus');
+            const adicionarEtiqueta = document.querySelector('.anticon.anticon-plus');
 
-            // Verifica se o elemento foi encontrado e simula um clique
-            if (element) {
-                element.click();
+            // 
+            if (adicionarEtiqueta) {
+                adicionarEtiqueta.click();
             } else {
                 console.error("Elemento com a classe 'anticon anticon-plus' não encontrado.");
                 return;
             }
-
+            //digita a mensagem nos eventos do atendimento
             if (textarea) {
                 // Define o valor do textarea para o texto da mensagem
                 textarea.value = messageContainer.innerText; 
@@ -395,7 +396,7 @@
                 textarea.dispatchEvent(eventoInput);
             }
         });
-
+        // Faz atualização dos input dentro da mensagem e das etiquetas
         function updateMessage() {
             const selectedItem = data[currentIndex];
             externoValue.textContent = selectedItem.externo ? 'Sim' : 'Não';
