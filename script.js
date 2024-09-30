@@ -359,20 +359,11 @@
             };
 
             console.log('Informações do atendimento:', atendimentoInfo);
+            //fecha o menu de atendimento
             document.querySelector('.openButton').click();
+
             // Seleciona o elemento textarea pelo seletor
             const textarea = document.querySelector('textarea.text-area');
-                // Seleciona o primeiro elemento com a classe 'anticon anticon-plus'
-            const element = document.querySelector('.anticon.anticon-plus');
-
-            // Verifica se o elemento foi encontrado e simula um clique
-            if (element) {
-                element.click();
-            } else {
-                console.error("Elemento com a classe 'anticon anticon-plus' não encontrado.");
-                return;
-            }
-
             if (textarea) {
                 // Define o valor do textarea para o texto da mensagem
                 textarea.value = messageContainer.innerText; 
@@ -381,6 +372,7 @@
                 const eventoInput = new Event('input', { bubbles: true });
                 textarea.dispatchEvent(eventoInput);
             }
+            
         });
 
         function updateMessage() {
@@ -395,16 +387,8 @@
 
         updateMessage();
     }
-    //teste
     createStyles();
     createToggleOpenButton();
     const data = await fetchJsonData();
     createInterface(data);
-    setInterval(() => {
-        console.log('olá, testando?')
-    }, 10000);
-    function efetuarCommit(){
-        console.log('teste')
-    }
-    efetuarCommit()
 })();
