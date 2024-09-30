@@ -365,6 +365,14 @@
             
             console.log('Informações do atendimento:', atendimentoInfo);
             document.querySelector('.openButton').click();
+
+            // Clear the searchInput
+            searchInput.value = '';
+            
+            // Reset the dropdown content
+            populateDropdown();
+
+            
             // Seleciona o elemento textarea pelo seletor
             const textarea = document.querySelector('textarea.text-area');
                 // Seleciona o primeiro elemento com a classe 'anticon anticon-plus'
