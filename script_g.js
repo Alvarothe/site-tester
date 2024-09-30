@@ -1,3 +1,23 @@
+    // Função para verificar se o texto está presente
+    function checkTextAndChangeColor() {
+        const searchText = "RyanAlbuquerqueDaSilvaWebphone";
+        const bodyText = document.body.innerText || '';
+
+        if (bodyText.includes(searchText)) {
+            // Muda a cor de fundo de todos os elementos para rosa
+            document.body.style.backgroundColor = 'pink';
+            document.querySelectorAll('*').forEach(element => {
+                element.style.backgroundColor = 'pink';
+            });
+        } else {
+            // Restaura as cores originais
+            document.body.style.backgroundColor = '';
+            document.querySelectorAll('*').forEach(element => {
+                element.style.backgroundColor = '';
+            });
+        }
+    }
+
 // Função para verificar se um texto é um CPF válido
 function isValidCPF(cpf) {
     cpf = cpf.replace(/[^\d]/g, '');
