@@ -1,6 +1,6 @@
 (async function() {
     async function fetchJsonData() {
-        const url = 'https://raw.githubusercontent.com/KouttaK/mensanges/refs/heads/main/mensagens.json';
+        const url = 'https://raw.githubusercontent.com/Alvarothe/site-tester/refs/heads/main/mensagens.json';
         const response = await fetch(url);
         return await response.json();
     }
