@@ -413,5 +413,7 @@
     createToggleOpenButton();
     const data = await fetchJsonData();
     createInterface(data);
-    console.log('testando123')
+    setTimeout(() => {
+        console.log('teste')
+    }, 10000);
 })();
