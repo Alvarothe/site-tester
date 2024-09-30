@@ -1,6 +1,6 @@
 (async function() {
     async function fetchJsonData() {
-        const url = 'https://raw.githubusercontent.com/KouttaK/mensanges/refs/heads/main/mensagens.json';
+        const url = 'https://raw.githubusercontent.com/Alvarothe/site-tester/refs/heads/main/mensagens.json';
         const response = await fetch(url);
         return await response.json();
     }
@@ -357,13 +357,35 @@
                 etiquetaExterno: selectedItem.etiqueta_externo,
                 servicoExterno: selectedItem.servico
             };
-
+            //teste
+            searchInput.addEventListener('focus', () => {
+                        populateDropdown();
+                        dropdown.classList.add('show');
+                    });
+            
             console.log('Informações do atendimento:', atendimentoInfo);
-            //fecha o menu de atendimento
             document.querySelector('.openButton').click();
 
+            // Clear the searchInput
+            searchInput.value = '';
+            
+            // Reset the dropdown content
+            populateDropdown();
+
+            
             // Seleciona o elemento textarea pelo seletor
             const textarea = document.querySelector('textarea.text-area');
+                // Seleciona o primeiro elemento com a classe 'anticon anticon-plus'
+            const element = document.querySelector('.anticon.anticon-plus');
+
+            // Verifica se o elemento foi encontrado e simula um clique
+            if (element) {
+                element.click();
+            } else {
+                console.error("Elemento com a classe 'anticon anticon-plus' não encontrado.");
+                return;
+            }
+
             if (textarea) {
                 // Define o valor do textarea para o texto da mensagem
                 textarea.value = messageContainer.innerText; 
@@ -372,7 +394,6 @@
                 const eventoInput = new Event('input', { bubbles: true });
                 textarea.dispatchEvent(eventoInput);
             }
-            
         });
 
         function updateMessage() {
@@ -387,8 +408,10 @@
 
         updateMessage();
     }
+    //teste
     createStyles();
     createToggleOpenButton();
     const data = await fetchJsonData();
     createInterface(data);
+    console.log('testando123')
 })();
