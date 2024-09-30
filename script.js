@@ -408,8 +408,6 @@
 
         updateMessage();
     }
-    //teste
-    console.log(teses)
     createStyles();
     createToggleOpenButton();
     const data = await fetchJsonData();
