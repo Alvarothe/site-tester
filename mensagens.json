@@ -1,11 +1,11 @@
 [
     {
-        "titulo": " - ",
-        "mensagem": " - ",
+        "titulo": " null ",
+        "mensagem": " null ",
         "externo": false,
         "aguardar": false,
-        "etiqueta": " - ",
-        "etiqueta_externo": " - ",
+        "etiqueta": " null ",
+        "etiqueta_externo": " false ",
         "servico": " - "
     },
     {
