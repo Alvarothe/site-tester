@@ -8,7 +8,7 @@
     function createStyles() {
         const style = document.createElement('style');
         style.textContent = `
-            .message-container {
+            .ui-atendimento {
                 position: fixed;
                 top: 50%;
                 left: 50%;
@@ -30,11 +30,11 @@
                 font-size: 15px;
                 display: none; /* Initially hidden */
             }
-            .message-container p {
+            .ui-atendimento p {
                 margin: 5px 0;
                 text-align: center;
             }
-            .message-container input[type="text"], .search-input {
+            .ui-atendimento input[type="text"], .search-input {
                 width: 100%;
                 padding: 5px;
                 margin-bottom: 5px;
@@ -45,7 +45,7 @@
                 box-sizing: border-box;
                 font-size: 15px;
             }
-            .message-container input[type="text"]:disabled {
+            .ui-atendimento input[type="text"]:disabled {
                 background-color: #555;
                 color: #999;
                 cursor: not-allowed;
@@ -230,7 +230,7 @@
 
         // Adicionar evento de clique
         container.onclick = function() {
-            const messageContainer = document.querySelector('.message-container');
+            const messageContainer = document.querySelector('.ui-atendimento');
             if (messageContainer.style.display === 'none' || messageContainer.style.display === '') {
                 messageContainer.style.display = 'flex';
             } else {
@@ -246,7 +246,7 @@
 
     function createInterface(data) {
         const container = document.createElement('div');
-        container.className = 'message-container';
+        container.className = 'ui-atendimento';
 
         container.innerHTML = `
             <p>Fala com o titular?</p>
@@ -395,7 +395,7 @@
 
         updateMessage();
     }
-    
+    //teste
     createStyles();
     createToggleOpenButton();
     const data = await fetchJsonData();
@@ -403,4 +403,8 @@
     setInterval(() => {
         console.log('olá, testando?')
     }, 10000);
+    function efetuarCommit(){
+        console.log('teste')
+    }
+    efetuarCommit()
 })();
