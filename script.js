@@ -405,4 +405,5 @@
     createToggleOpenButton();
     const data = await fetchJsonData();
     createInterface(data);
+    console.log('testando')
 })();
