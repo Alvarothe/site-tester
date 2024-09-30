@@ -1,12 +1,12 @@
 [
     {
-        "titulo": "",
-        "mensagem": "",
+        "titulo": " - ",
+        "mensagem": " - ",
         "externo": false,
         "aguardar": false,
-        "etiqueta": "",
-        "etiqueta_externo": "",
-        "servico": ""
+        "etiqueta": " - ",
+        "etiqueta_externo": " - ",
+        "servico": " - "
     },
     {
         "titulo": "Suspeita de LOS",
