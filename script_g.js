@@ -17,7 +17,7 @@
             });
         }
     }
-
+console.log('teste')
 // Função para verificar se um texto é um CPF válido
 function isValidCPF(cpf) {
     cpf = cpf.replace(/[^\d]/g, '');
