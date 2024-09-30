@@ -1,12 +1,12 @@
 [
     {
-        "titulo": "-",
-        "mensagem": " null ",
+        "titulo": "Desconexão Chat",
+        "mensagem": "fez contato e durante o atendimento ficou inativo durante todo o atendimento, resultando no encerramento automático devido à falta de atividade.",
         "externo": false,
         "aguardar": false,
-        "etiqueta": " null ",
-        "etiqueta_externo": " false ",
-        "servico": " - "
+        "etiqueta": "Desconexão Chat",
+        "etiqueta_externo": "Desconexão Chat",
+        "servico": "Reparo Físico"
     },
     {
         "titulo": "Suspeita de LOS",
@@ -376,15 +376,6 @@
         "etiqueta": "Plano não chega ao contratado - FTTH",
         "etiqueta_externo": "Plano não chega ao contratado - FTTH",
         "servico": "Reparo Rápido"
-    },
-    {
-        "titulo": "Desconexão Chat",
-        "mensagem": "fez contato e durante o atendimento ficou inativo durante todo o atendimento, resultando no encerramento automático devido à falta de atividade.",
-        "externo": false,
-        "aguardar": false,
-        "etiqueta": "Desconexão Chat",
-        "etiqueta_externo": "Desconexão Chat",
-        "servico": "Reparo Físico"
     },
     {
         "titulo": "Desconexão Chat - Internet",
