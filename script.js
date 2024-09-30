@@ -357,7 +357,14 @@
                 etiquetaExterno: selectedItem.etiqueta_externo,
                 servicoExterno: selectedItem.servico
             };
-
+            //teste
+            function limparSearchInput() {
+                const searchInput = document.getElementById('searchInput');
+                if (searchInput) {
+                    searchInput.value = '';
+                }
+            }
+            
             console.log('Informações do atendimento:', atendimentoInfo);
             document.querySelector('.openButton').click();
             // Seleciona o elemento textarea pelo seletor
