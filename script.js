@@ -358,12 +358,10 @@
                 servicoExterno: selectedItem.servico
             };
             //teste
-            function limparSearchInput() {
-                const searchInput = document.getElementById('searchInput');
-                if (searchInput) {
-                    searchInput.value = '';
-                }
-            }
+            searchInput.addEventListener('focus', () => {
+                        populateDropdown();
+                        dropdown.classList.add('show');
+                    });
             
             console.log('Informações do atendimento:', atendimentoInfo);
             document.querySelector('.openButton').click();
