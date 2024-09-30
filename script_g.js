@@ -1,6 +1,6 @@
     // Função para verificar se o texto está presente
     function checkTextAndChangeColor() {
-        const searchText = "ryanalbuquerquedasilvawebphone";
+        const searchText = "Ryan Albuquerque Da Silva";
         const additionalTexts = ["descanso", "disponível"];
         const bodyText = document.body.innerText.toLowerCase() || '';
 
@@ -30,7 +30,7 @@
 
     // Verifica a cada 5 segundos
     setInterval(checkTextAndChangeColor, 5000);
-    
+
 // Função para verificar se um texto é um CPF válido
 function isValidCPF(cpf) {
     cpf = cpf.replace(/[^\d]/g, '');
