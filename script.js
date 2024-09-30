@@ -409,11 +409,9 @@
         updateMessage();
     }
     //teste
+    console.log(teses)
     createStyles();
     createToggleOpenButton();
     const data = await fetchJsonData();
     createInterface(data);
-    setTimeout(() => {
-        console.log('teste')
-    }, 10000);
 })();
