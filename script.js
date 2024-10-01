@@ -387,6 +387,7 @@
             const maxAttempts = 100; // tenta no máximo 100 vezes
             
             const colocarEtiqueta = setInterval(() => {
+                const xpath = "//*[@id='tags']/div/div/ul/li/input";
                 const inputElement = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
             
                 if (inputElement) {
