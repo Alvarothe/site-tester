@@ -382,7 +382,29 @@
                 if (adicionarEtiqueta) { adicionarEtiqueta.click(); clearInterval(seletorEtiqueta); }
             }, 50);
 
-            console.log('selectedItem.etiqueta')
+            let attempts = 0;
+            console.log(attempts)
+            const maxAttempts = 100; // tenta no máximo 100 vezes
+            
+            const colocarEtiqueta = setInterval(() => {
+                const inputElement = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+            
+                if (inputElement) {
+                    inputElement.focus();
+                    inputElement.click();
+                    inputElement.value = selectedItem.etiqueta;
+                    const event = new Event('input', { bubbles: true });
+                    inputElement.dispatchEvent(event);
+                    clearInterval(colocarEtiqueta);
+                } else {
+                    attempts++;
+                    if (attempts >= maxAttempts) {
+                        console.error("Elemento não encontrado após várias tentativas.");
+                        clearInterval(colocarEtiqueta);
+                    }
+                }
+            }, 50);
+            
 
             //digita a mensagem nos eventos do atendimento
             if (textarea) {
