@@ -388,7 +388,7 @@
             
             const colocarEtiqueta = setInterval(() => {
                 const xpath = "//*[@id='tags']/div/div/ul/li/input";
-                const inputElement = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+                const inputElement = document.evaluate(xpath);
             
                 if (inputElement) {
                     inputElement.focus();
