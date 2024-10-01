@@ -232,11 +232,11 @@
 
         // Adicionar evento de clique
         container.onclick = function() {
-            const messageContainer = document.querySelector('.ui-atendimento');
-            if (messageContainer.style.display === 'none' || messageContainer.style.display === '') {
-                messageContainer.style.display = 'flex';
+            const MensagemDoProtocolo = document.querySelector('.ui-atendimento');
+            if (MensagemDoProtocolo.style.display === 'none' || MensagemDoProtocolo.style.display === '') {
+                MensagemDoProtocolo.style.display = 'flex';
             } else {
-                messageContainer.style.display = 'none';
+                MensagemDoProtocolo.style.display = 'none';
             }
             this.classList.toggle('flipped');
         };
@@ -269,7 +269,7 @@
             </div>
 
             <div class="content-wrapper">
-                <div id="messageContainer" class="message-content"></div>
+                <div id="MensagemDoProtocolo" class="message-content"></div>
                 <div class="info-container">
                     <div class="info-item">
                         <div class="infoService-container">
@@ -295,7 +295,7 @@
         document.body.appendChild(container);
 
         const nomeDoContato = document.getElementById('nomeDoContato');
-        const messageContainer = document.getElementById('messageContainer');
+        const MensagemDoProtocolo = document.getElementById('MensagemDoProtocolo');
         const titularToggle = document.getElementById('titularToggle');
         const externoValue = document.getElementById('externoValue');
         const aguardarValue = document.getElementById('aguardarValue');
@@ -355,7 +355,7 @@
                 etiqueta: selectedItem.etiqueta,
                 externo: selectedItem.externo,
                 aguardar: selectedItem.aguardar,
-                mensagem: messageContainer.innerText,
+                mensagem: MensagemDoProtocolo.innerText,
                 etiquetaExterno: selectedItem.etiqueta_externo,
                 servicoExterno: selectedItem.servico
             };
@@ -374,20 +374,20 @@
             
             // Seleciona o elemento textarea pelo seletor
             const textarea = document.querySelector('textarea.text-area');
-                // Seleciona o primeiro elemento com a classe 'anticon anticon-plus'
-            const adicionarEtiqueta = document.querySelector('.anticon.anticon-plus');
 
-            // 
-            if (adicionarEtiqueta) {
-                adicionarEtiqueta.click();
-            } else {
-                console.error("Elemento com a classe 'anticon anticon-plus' não encontrado.");
-                return;
-            }
+
+            // Seleciona o primeiro elemento com a classe 'anticon anticon-plus'
+            const intervalo = setInterval(() => {
+                const adicionarEtiqueta = document.querySelector('.anticon.anticon-plus');
+                if (adicionarEtiqueta) { adicionarEtiqueta.click(); clearInterval(intervalo); }
+            }, 50);
+            
+
+
             //digita a mensagem nos eventos do atendimento
             if (textarea) {
                 // Define o valor do textarea para o texto da mensagem
-                textarea.value = messageContainer.innerText; 
+                textarea.value = MensagemDoProtocolo.innerText; 
 
                 // Dispara um evento de input para garantir que a mudança seja registrada
                 const eventoInput = new Event('input', { bubbles: true });
@@ -402,7 +402,7 @@
             etiquetaValor.textContent = selectedItem.etiqueta;
 
             let titularMessage = titularToggle.checked ? 'Titular' : nomeDoContato.value.trim();
-            messageContainer.innerHTML = `${titularMessage ? titularMessage + ' entrou em contato e ' : ''}${selectedItem.mensagem}`;
+            MensagemDoProtocolo.innerHTML = `${titularMessage ? titularMessage + ' entrou em contato e ' : ''}${selectedItem.mensagem}`;
         }
 
         updateMessage();
