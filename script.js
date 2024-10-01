@@ -381,21 +381,35 @@
                 const adicionarEtiqueta = document.querySelector('.anticon.anticon-plus');
                 if (adicionarEtiqueta) { adicionarEtiqueta.click(); clearInterval(seletorEtiqueta); }
             }, 50);
-            
-            // Insere a etiqueta do problema.
-            const intervalo = setInterval(() => {
-                const EtiquetarProblema = document.evaluate("//*[@id='tags']/div/div/ul/li/input", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-                if (EtiquetarProblema) {
-                    EtiquetarProblema.focus();
-                    EtiquetarProblema.click();
-                    EtiquetarProblema.value = selectedItem.etiqueta;
-                    EtiquetarProblema.dispatchEvent(new Event('input', { bubbles: true }));
-                    clearInterval(intervalo);
+
+            console.log("Iniciando a modificação do campo de entrada...");
+
+            // Seleciona a etiqueta.
+            const xpath = "//*[@id='tags']/div/div/ul/li/input";
+
+            const interval = setInterval(() => {
+                // Seleciona o elemento de entrada usando o XPath
+                const inputElement = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+
+                // Verifica se o elemento foi encontrado
+                if (inputElement) {
+                    // Foca no elemento e clica
+                    inputElement.focus();
+                    inputElement.click();
+
+                    // Define o valor do elemento de entrada
+                    inputElement.value = selectedItem.etiqueta;
+
+                    // Dispara um evento de input para garantir que a mudança seja refletida
+                    const event = new Event('input', { bubbles: true });
+                    inputElement.dispatchEvent(event);
+
+                    console.log("Elemento encontrado e modificado com sucesso.");
+                    clearInterval(interval); // Para de tentar ao ter sucesso
                 } else {
                     console.error("Elemento não encontrado, tentando novamente...");
                 }
-            }, 50);
-            
+            }, 50); // Tenta a cada 50ms
 
             //digita a mensagem nos eventos do atendimento
             if (textarea) {
