@@ -376,13 +376,14 @@
             const textarea = document.querySelector('textarea.text-area');
 
 
-            // Clica no seletor de etiquetas com a classe 'anticon anticon-plus'
-            const seletorEtiqueta = setInterval(() => {
+            // Seleciona o primeiro elemento com a classe 'anticon anticon-plus'
+            const intervalo = setInterval(() => {
                 const adicionarEtiqueta = document.querySelector('.anticon.anticon-plus');
-                if (adicionarEtiqueta) { adicionarEtiqueta.click(); clearInterval(seletorEtiqueta); }
+                if (adicionarEtiqueta) { adicionarEtiqueta.click(); clearInterval(intervalo); }
             }, 50);
+            
 
-            console.log('testando123')
+
             //digita a mensagem nos eventos do atendimento
             if (textarea) {
                 // Define o valor do textarea para o texto da mensagem
