@@ -376,13 +376,26 @@
             const textarea = document.querySelector('textarea.text-area');
 
 
-            // Seleciona o primeiro elemento com a classe 'anticon anticon-plus'
-            const intervalo = setInterval(() => {
+            // Clica no seletor de etiquetas com a classe 'anticon anticon-plus'
+            const seletorEtiqueta = setInterval(() => {
                 const adicionarEtiqueta = document.querySelector('.anticon.anticon-plus');
-                if (adicionarEtiqueta) { adicionarEtiqueta.click(); clearInterval(intervalo); }
+                if (adicionarEtiqueta) { adicionarEtiqueta.click(); clearInterval(seletorEtiqueta); }
             }, 50);
             
-
+            // Insere a etiqueta do problema.
+            const intervalo = setInterval(() => {
+                const EtiquetarProblema = document.evaluate("//*[@id='tags']/div/div/ul/li/input", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+                if (EtiquetarProblema) {
+                    EtiquetarProblema.focus();
+                    EtiquetarProblema.click();
+                    EtiquetarProblema.value = selectedItem.etiqueta;
+                    EtiquetarProblema.dispatchEvent(new Event('input', { bubbles: true }));
+                    clearInterval(intervalo);
+                } else {
+                    console.error("Elemento não encontrado, tentando novamente...");
+                }
+            }, 50);
+            
 
             //digita a mensagem nos eventos do atendimento
             if (textarea) {
