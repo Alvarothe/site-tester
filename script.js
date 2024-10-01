@@ -371,8 +371,6 @@
             document.querySelector('.openButton').click();
 
 
-            setTimeout(() => {
-                
             
             // Seleciona o elemento textarea pelo seletor
             const textarea = document.querySelector('textarea.text-area');
@@ -384,7 +382,7 @@
                 if (adicionarEtiqueta) { adicionarEtiqueta.click(); clearInterval(seletorEtiqueta); }
             }, 50);
 
-
+            console.log('testando123')
             //digita a mensagem nos eventos do atendimento
             if (textarea) {
                 // Define o valor do textarea para o texto da mensagem
