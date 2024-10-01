@@ -371,6 +371,8 @@
             document.querySelector('.openButton').click();
 
 
+            setTimeout(() => {
+                
             
             // Seleciona o elemento textarea pelo seletor
             const textarea = document.querySelector('textarea.text-area');
@@ -382,31 +384,28 @@
                 if (adicionarEtiqueta) { adicionarEtiqueta.click(); clearInterval(seletorEtiqueta); }
             }, 50);
 
-            let attempts = 0;
-            console.log(attempts)
-            const maxAttempts = 100; // tenta no máximo 100 vezes
-            
-            const colocarEtiqueta = setInterval(() => {
-                const xpath = "//*[@id='tags']/div/div/ul/li/input";
-                const inputElement = document.evaluate(xpath);
-            
-                if (inputElement) {
-                    inputElement.focus();
-                    inputElement.click();
-                    inputElement.value = selectedItem.etiqueta;
-                    const event = new Event('input', { bubbles: true });
-                    inputElement.dispatchEvent(event);
-                    clearInterval(colocarEtiqueta);
-                } else {
-                    attempts++;
-                    if (attempts >= maxAttempts) {
-                        console.error("Elemento não encontrado após várias tentativas.");
-                        clearInterval(colocarEtiqueta);
-                    }
-                }
-            }, 50);
-            
+            console.log("Iniciando a modificação do campo de entrada...");
 
+            // Seleciona o elemento de entrada usando o XPath
+            var xpath = "//*[@id='tags']/div/div/ul/li/input";
+            var inputElement = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+    
+            // Verifica se o elemento foi encontrado
+            if (inputElement) {
+                // Foca no elemento e clica
+                inputElement.focus();
+                inputElement.click();
+    
+                // Define o valor do elemento de entrada
+                inputElement.value = "Suspeita de LOS";
+    
+                // Dispara um evento de input para garantir que a mudança seja refletida
+                var event = new Event('input', { bubbles: true });
+                inputElement.dispatchEvent(event);
+            } else {
+                console.error("Elemento não encontrado.");
+            }
+        }, 3000;
             //digita a mensagem nos eventos do atendimento
             if (textarea) {
                 // Define o valor do textarea para o texto da mensagem
