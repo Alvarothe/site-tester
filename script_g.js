@@ -1,36 +1,3 @@
-    // Função para verificar se o texto está presente
-    function checkTextAndChangeColor() {
-        const searchText = "Ryan Albuquerque Da Silva";
-        const additionalTexts = ["descanso", "disponível"];
-        const bodyText = document.body.innerText.toLowerCase() || '';
-
-        const foundSearchText = bodyText.includes(searchText.toLowerCase());
-        const foundAdditionalText = additionalTexts.some(text => bodyText.includes(text.toLowerCase()));
-
-        if (foundSearchText && foundAdditionalText) {
-            // Muda a cor de fundo de todos os elementos para rosa
-            document.body.style.backgroundColor = 'pink';
-            document.querySelectorAll('*').forEach(element => {
-                element.style.backgroundColor = 'pink';
-            });
-        } else if (foundSearchText && !foundAdditionalText) {
-            // Restaura as cores originais se apenas o nome for encontrado
-            document.body.style.backgroundColor = '';
-            document.querySelectorAll('*').forEach(element => {
-                element.style.backgroundColor = '';
-            });
-        } else {
-            // Restaura as cores originais se nenhuma condição for atendida
-            document.body.style.backgroundColor = '';
-            document.querySelectorAll('*').forEach(element => {
-                element.style.backgroundColor = '';
-            });
-        }
-    }
-
-    // Verifica a cada 5 segundos
-    setInterval(checkTextAndChangeColor, 5000);
-
 // Função para verificar se um texto é um CPF válido
 function isValidCPF(cpf) {
     cpf = cpf.replace(/[^\d]/g, '');
