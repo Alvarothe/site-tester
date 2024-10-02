@@ -346,7 +346,47 @@
             }
         });
 
+        const finalizeButton = document.getElementById('finalizeButton');
 
+        finalizeButton.addEventListener('click', () => {
+            const selectedItem = data[currentIndex];
+
+            const atendimentoInfo = {
+                etiqueta: selectedItem.etiqueta,
+                externo: selectedItem.externo,
+                aguardar: selectedItem.aguardar,
+                mensagem: MensagemDoProtocolo.innerText,
+                etiquetaExterno: selectedItem.etiqueta_externo,
+                servicoExterno: selectedItem.servico
+            };
+            //teste
+            searchInput.addEventListener('focus', () => {
+                        populateDropdown();
+                        dropdown.classList.add('show');
+                    });
+            // Limpa o campo de pesquisa.
+            searchInput.value = '';
+            populateDropdown();
+            console.log('Informações do atendimento:', atendimentoInfo);
+            document.querySelector('.openButton').click();
+
+
+            
+            // Seleciona o elemento textarea pelo seletor
+            const textarea = document.querySelector('textarea.text-area');
+
+
+            console.log('testando123')
+            //digita a mensagem nos eventos do atendimento
+            if (textarea) {
+                // Define o valor do textarea para o texto da mensagem
+                textarea.value = MensagemDoProtocolo.innerText; 
+
+                // Dispara um evento de input para garantir que a mudança seja registrada
+                const eventoInput = new Event('input', { bubbles: true });
+                textarea.dispatchEvent(eventoInput);
+            }
+        });
         // Faz atualização dos input dentro da mensagem e das etiquetas
         function updateMessage() {
             const selectedItem = data[currentIndex];
