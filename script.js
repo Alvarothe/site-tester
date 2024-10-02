@@ -370,8 +370,42 @@
             console.log('Informações do atendimento:', atendimentoInfo);
             document.querySelector('.openButton').click();
 
+            console.log(selectedItem.etiqueta)
             console.log('não deu certo')
+
+            // escreve protocolo
+            // Seleciona o elemento textarea pelo seletor
+            const textarea = document.querySelector('textarea.text-area');
+
+            if (textarea) {
+                // Define o valor do textarea para o texto da mensagem
+                textarea.value = MensagemDoProtocolo.innerText; 
+
+                // Dispara um evento de input para garantir que a mudança seja registrada
+                const eventoInput = new Event('input', { bubbles: true });
+                textarea.dispatchEvent(eventoInput);
+            }
+            //clica no botão para adicionar etiqueta.             
+            const adicionarEtiqueta = document.querySelector('.anticon.anticon-plus');
+            adicionarEtiqueta ? adicionarEtiqueta.click() : console.error("Elemento 'anticon anticon-plus' não encontrado.");
+            
+            //seleciona etiqueta.
+            const xpath = "//*[@id='tags']/div/div/ul/li/input";
+            const intervalo = setInterval(() => {
+                const inserirEtiqueta = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+                if (inserirEtiqueta) {
+                    inserirEtiqueta.focus();
+                    inserirEtiqueta.click();
+                    inserirEtiqueta.value = selectedItem.etiqueta;
+                    inserirEtiqueta.dispatchEvent(new Event('input', { bubbles: true }));
+                    clearInterval(intervalo); // Para o intervalo quando conseguir inserir a etiqueta
+                } else {
+                    console.error("Elemento não encontrado.");
+                }
+            }, 600);
+
         });
+
         // Faz atualização dos input dentro da mensagem e das etiquetas
         function updateMessage() {
             const selectedItem = data[currentIndex];
