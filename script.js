@@ -359,6 +359,7 @@
                 etiquetaExterno: selectedItem.etiqueta_externo,
                 servicoExterno: selectedItem.servico
             };
+            const etiqueta = selectedItem.etiqueta.toLowerCase(); 
             //teste
             searchInput.addEventListener('focus', () => {
                         populateDropdown();
@@ -390,19 +391,49 @@
             adicionarEtiqueta ? adicionarEtiqueta.click() : console.error("Elemento 'anticon anticon-plus' não encontrado.");
             
             //seleciona etiqueta.
-            const xpath = "//*[@id='tags']/div/div/ul/li/input";
-            const intervalo = setInterval(() => {
-                const inserirEtiqueta = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+            const campoInputEtiqueta = "//*[@id='tags']/div/div/ul/li/input";
+            const tempoEncontrarEtiqueta = setInterval(() => {
+                const inserirEtiqueta = document.evaluate(campoInputEtiqueta, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
                 if (inserirEtiqueta) {
                     inserirEtiqueta.focus();
                     inserirEtiqueta.click();
-                    inserirEtiqueta.value = selectedItem.etiqueta;
+                    inserirEtiqueta.value = etiqueta;
                     inserirEtiqueta.dispatchEvent(new Event('input', { bubbles: true }));
-                    clearInterval(intervalo); // Para o intervalo quando conseguir inserir a etiqueta
+                    clearInterval(tempoEncontrarEtiqueta); // Para o intervalo quando conseguir inserir a etiqueta
                 } else {
                     console.error("Elemento não encontrado.");
                 }
             }, 600);
+            //Clica na etiqueta:
+            let clicado = false; // Flag para verificar se já clicou
+
+            const verificarElemento = () => {
+                if (clicado) return;
+
+                const elementos = document.querySelectorAll('.ant-select-dropdown-menu-item');
+                const selecionados = document.querySelectorAll('.ant-select-selection__choice__content');
+
+                // Verifica se a etiqueta já está selecionada
+                if ([...selecionados].some(selecionado => selecionado.textContent.trim().toLowerCase() === etiqueta)) {
+                    console.log(`Elemento já selecionado: ${etiqueta}`);
+                    clearInterval(intervalo);
+                    return;
+                }
+
+                // Se a etiqueta não estiver selecionada, verifica os elementos
+                [...elementos].forEach(elemento => {
+                    if (elemento.textContent.trim().toLowerCase() === etiqueta) {
+                        elemento.click();
+                        clicado = true;
+                        console.log(`Elemento clicado: ${etiqueta}`);
+                        clearInterval(intervalo);
+                    }
+                });
+            };
+
+            // Verifica a cada 600ms
+            const intervalo = setInterval(verificarElemento, 600);
+
 
         });
 
