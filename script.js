@@ -1,5 +1,3 @@
-
-
 (async function() {
     async function fetchJsonData() {
         const url = 'https://raw.githubusercontent.com/Alvarothe/site-tester/refs/heads/main/mensagens.json';
@@ -241,7 +239,7 @@
             this.classList.toggle('flipped');
         };
 
-        
+
         // Adicionar o contêiner ao corpo do documento
         document.body.appendChild(container);
     }
@@ -287,7 +285,7 @@
                         <p class="etiqueta">Etiqueta: <span id="etiquetaValor"></span></p>
                     </div>
                 </div>
-                
+
                 <button id="finalizeButton" class="finalize-button">Finalizar Atendimento</button>
             </div>
         `;
@@ -359,7 +357,7 @@
                 etiquetaExterno: selectedItem.etiqueta_externo,
                 servicoExterno: selectedItem.servico
             };
-            const etiqueta = selectedItem.etiqueta.toLowerCase(); 
+            const etiqueta = selectedItem.etiqueta.toLowerCase();
             //teste
             searchInput.addEventListener('focus', () => {
                         populateDropdown();
@@ -380,16 +378,16 @@
 
             if (textarea) {
                 // Define o valor do textarea para o texto da mensagem
-                textarea.value = MensagemDoProtocolo.innerText; 
+                textarea.value = MensagemDoProtocolo.innerText;
 
                 // Dispara um evento de input para garantir que a mudança seja registrada
                 const eventoInput = new Event('input', { bubbles: true });
                 textarea.dispatchEvent(eventoInput);
             }
-            //clica no botão para adicionar etiqueta.             
+            //clica no botão para adicionar etiqueta.
             const adicionarEtiqueta = document.querySelector('.anticon.anticon-plus');
             adicionarEtiqueta ? adicionarEtiqueta.click() : console.error("Elemento 'anticon anticon-plus' não encontrado.");
-            
+
             //seleciona etiqueta.
             const campoInputEtiqueta = "//*[@id='tags']/div/div/ul/li/input";
             const tempoEncontrarEtiqueta = setInterval(() => {
