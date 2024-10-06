@@ -386,6 +386,21 @@
             }
             const botao = document.querySelector('button#send_button');
 
+            //seleciona etiqueta.
+            const campoInputEtiqueta = "//*[@id='tags']/div/div/ul/li/input";
+            const tempoEncontrarEtiqueta = setInterval(() => {
+                const inserirEtiqueta = document.evaluate(campoInputEtiqueta, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+                if (inserirEtiqueta) {
+                    inserirEtiqueta.focus();
+                    inserirEtiqueta.click();
+                    inserirEtiqueta.value = etiqueta;
+                    inserirEtiqueta.dispatchEvent(new Event('input', { bubbles: true }));
+                    clearInterval(tempoEncontrarEtiqueta); // Para o intervalo quando conseguir inserir a etiqueta
+                } else {
+                    console.error("Elemento não encontrado.");
+                }
+            }, 600);
+
             // Verifica se o botão foi encontrado e está habilitado
             if (botao && !botao.hasAttribute('disabled')) {
                 // Clica no botão
@@ -417,6 +432,12 @@
                         elemento.click();
                         clicado = true;
                         console.log(`Elemento clicado: ${etiqueta}`);
+                        var concludeElement = Array.from(document.querySelectorAll('span.ng-star-inserted')).find(el => el.textContent.trim() === "Concluir");
+
+                        // Verifica se o elemento foi encontrado e simula um clique
+                        if (concludeElement) {
+                            concludeElement.click();
+                        }
                         clearInterval(seletorDeEtiqueta);
                     }
                 });
