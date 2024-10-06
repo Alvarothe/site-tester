@@ -247,8 +247,8 @@
         "mensagem": "relata que está sem acesso à internet. Verificamos que a rede Wi-Fi do cliente não conecta, com a mensagem de erro de autenticação. A falha na autenticação pode ter sido causada por uma senha incorreta ou por um problema no roteador. Geramos uma nova senha para o cliente e o acesso foi normalizado. ",
         "externo": false,
         "aguardar": false,
-        "etiqueta": "Alteração de senha do wi-fi",
-        "etiqueta_externo": "Alteração de senha do wi-fi",
+        "etiqueta": "Alterações nas configurações do Wi-Fi - FTTH",
+        "etiqueta_externo": "Alterações nas configurações do Wi-Fi - FTTH",
         "servico": "Reparo Físico"
     },
     {
@@ -301,8 +301,8 @@
         "mensagem": "solicitou a alteração da senha da rede Wi-Fi. Foi explicado que a senha é gerada aleatoriamente e composta por caracteres minúsculos. Senha gerada e cliente com acesso",
         "externo": false,
         "aguardar": false,
-        "etiqueta": "Alteração de senha do wi-fi",
-        "etiqueta_externo": "Alteração de senha do wi-fi",
+        "etiqueta": "Alterações nas configurações do Wi-Fi - FTTH",
+        "etiqueta_externo": "Alterações nas configurações do Wi-Fi - FTTH",
         "servico": "Reparo Físico"
     },
     {
@@ -310,8 +310,8 @@
         "mensagem": "solicitou a alteração da senha da rede Wi-Fi. Foi explicado que a senha é gerada aleatoriamente e composta por caracteres minúsculos. Senha gerada, porém, o cliente ficou sem interagir até o encerramento do atendimento.",
         "externo": false,
         "aguardar": false,
-        "etiqueta": "Alteração de senha do wi-fi",
-        "etiqueta_externo": "Alteração de senha do wi-fi",
+        "etiqueta": "Alterações nas configurações do Wi-Fi - FTTH",
+        "etiqueta_externo": "Alterações nas configurações do Wi-Fi - FTTH",
         "servico": "Reparo Físico"
     },
     {

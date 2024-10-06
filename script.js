@@ -384,24 +384,17 @@
                 const eventoInput = new Event('input', { bubbles: true });
                 textarea.dispatchEvent(eventoInput);
             }
+            const botao = document.querySelector('button#send_button');
+
+            // Verifica se o botão foi encontrado e está habilitado
+            if (botao && !botao.hasAttribute('disabled')) {
+                // Clica no botão
+                botao.click();
+            }
             //clica no botão para adicionar etiqueta.
             const adicionarEtiqueta = document.querySelector('.anticon.anticon-plus');
             adicionarEtiqueta ? adicionarEtiqueta.click() : console.error("Elemento 'anticon anticon-plus' não encontrado.");
 
-            //seleciona etiqueta.
-            const campoInputEtiqueta = "//*[@id='tags']/div/div/ul/li/input";
-            const tempoEncontrarEtiqueta = setInterval(() => {
-                const inserirEtiqueta = document.evaluate(campoInputEtiqueta, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-                if (inserirEtiqueta) {
-                    inserirEtiqueta.focus();
-                    inserirEtiqueta.click();
-                    inserirEtiqueta.value = etiqueta;
-                    inserirEtiqueta.dispatchEvent(new Event('input', { bubbles: true }));
-                    clearInterval(tempoEncontrarEtiqueta); // Para o intervalo quando conseguir inserir a etiqueta
-                } else {
-                    console.error("Elemento não encontrado.");
-                }
-            }, 600);
             //Clica na etiqueta:
             let clicado = false; // Flag para verificar se já clicou
 
@@ -414,7 +407,7 @@
                 // Verifica se a etiqueta já está selecionada
                 if ([...selecionados].some(selecionado => selecionado.textContent.trim().toLowerCase() === etiqueta)) {
                     console.log(`Elemento já selecionado: ${etiqueta}`);
-                    clearInterval(intervalo);
+                    clearInterval(seletorDeEtiqueta);
                     return;
                 }
 
@@ -424,13 +417,13 @@
                         elemento.click();
                         clicado = true;
                         console.log(`Elemento clicado: ${etiqueta}`);
-                        clearInterval(intervalo);
+                        clearInterval(seletorDeEtiqueta);
                     }
                 });
             };
 
             // Verifica a cada 600ms
-            const intervalo = setInterval(verificarElemento, 600);
+            const seletorDeEtiqueta = setInterval(verificarElemento, 600);
 
 
         });
