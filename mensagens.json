@@ -149,7 +149,7 @@
         "externo": false,
         "aguardar": false,
         "etiqueta": "Lentidão - FTTH",
-        "etiqueta_externo": "Lentidao",
+        "etiqueta_externo": "Lentidão",
         "servico": "Reparo Rápido"
     },
     {
@@ -158,7 +158,7 @@
         "externo": true,
         "aguardar": false,
         "etiqueta": "Lentidão - FTTH",
-        "etiqueta_externo": "Lentidao",
+        "etiqueta_externo": "Lentidão",
         "servico": "Reparo Rápido"
     },
     {
@@ -167,7 +167,7 @@
         "externo": false,
         "aguardar": false,
         "etiqueta": "Lentidão - FTTH",
-        "etiqueta_externo": "Lentidao",
+        "etiqueta_externo": "Lentidão",
         "servico": "Reparo Rápido"
     },
     {
@@ -176,7 +176,7 @@
         "externo": true,
         "aguardar": false,
         "etiqueta": "Lentidão - FTTH",
-        "etiqueta_externo": "Lentidao",
+        "etiqueta_externo": "Lentidão",
         "servico": "Reparo Rápido"
     },
     {
@@ -319,8 +319,8 @@
         "mensagem": "informou estar enfrentando problemas de instabilidade, pois a velocidade do plano contratado não está sendo alcançada na rede cabeada. Verificado o sinal óptico na sua PON está dentro dos padrões. Procedemos à execução dos procedimentos padrões, conforme documentados nos registros de eventos, e solicitamos alguns procedimentos manuais usuais, incluindo o reinício do computador. Além disso, verificamos a placa de rede é Gigabyte e o cabo de rede é CAT. 5E. Após essas verificações, realizamos um teste adicional no velocímetro, e agora a velocidade atingiu o contratado.",
         "externo": false,
         "aguardar": false,
-        "etiqueta": "Plano não chega ao contratado - FTTH",
-        "etiqueta_externo": "Plano não chega ao contratado - FTTH",
+        "etiqueta": "Plano não chega o contratado - FTTH",
+        "etiqueta_externo": "Plano não chega o contratado - FTTH",
         "servico": "Reparo Rápido"
     },
     {
@@ -328,8 +328,8 @@
         "mensagem": "informou estar enfrentando problemas de instabilidade, já que a velocidade do plano contratado não está sendo alcançada na rede cabeada. Verificado o sinal óptico de sua PON está dentro dos padrões. Executamos os procedimentos padrões, conforme documentados nos registros de eventos, e solicitamos alguns procedimentos manuais usuais, incluindo o reinício do computador. Além disso, constatamos que a placa de rede é Gigabyte e o cabo de rede é CAT. 5E. Apesar dessas verificações, o teste adicional no velocímetro ainda indicou uma velocidade inferior à garantida. Diante disso, foi gerada uma Ordem de Serviço (O.S.) para efetuar uma inspeção direta no local. Agendado de acordo com a disponibilidade do cliente.",
         "externo": true,
         "aguardar": false,
-        "etiqueta": "Plano não chega ao contratado - FTTH",
-        "etiqueta_externo": "Plano não chega ao contratado",
+        "etiqueta": "Plano não chega o contratado - FTTH",
+        "etiqueta_externo": "Plano não chega o contratado",
         "servico": "Reparo Rápido"
     },
     {
@@ -337,8 +337,8 @@
         "mensagem": "informou estar enfrentando problemas de instabilidade, pois a velocidade do plano contratado não está sendo alcançada na rede cabeada. Verificado o sinal óptico na sua PON está dentro dos padrões. Procedemos à execução dos procedimentos padrões, conforme documentados nos registros de eventos, e solicitamos alguns procedimentos manuais usuais, incluindo o reinício do computador. Além disso, verificamos a placa de rede é Gigabyte e o cabo de rede é CAT. 5E. Após essas verificações, realizamos um teste adicional no velocímetro, e agora a velocidade atingiu o contratado, porém, voltou a abaixar. Devido isso, o cliente ficou de continuar testando durante o restante do dia e caso continue persistido, irá entrar em contato para enviarmos uma equipe para analisar. ",
         "externo": false,
         "aguardar": false,
-        "etiqueta": "Plano não chega ao contratado - FTTH",
-        "etiqueta_externo": "Plano não chega ao contratado - FTTH",
+        "etiqueta": "Plano não chega o contratado - FTTH",
+        "etiqueta_externo": "Plano não chega o contratado - FTTH",
         "servico": "Reparo Rápido"
     },
     {
@@ -346,8 +346,8 @@
         "mensagem": "relatou estar enfrentando problemas de instabilidade, pois a velocidade do plano contratado não está sendo alcançada na rede cabeada. Após verificar que o sinal óptico na sua PON está dentro dos padrões, procedemos à execução dos procedimentos padrões, conforme documentados nos registros de eventos, e solicitamos alguns procedimentos manuais usuais, incluindo o reinício do computador. Após essas verificações, realizamos um teste adicional no velocímetro; no entanto, a velocidade continuou na mesma média de 90 Mbps. Verificamos que o cabo de rede é CAT. 5E e, ao examinar a placa de rede, identificamos que o problema está sendo ocasionado pela placa de rede FE (/100). O cliente está ciente dessa situação.",
         "externo": false,
         "aguardar": false,
-        "etiqueta": "Plano não chega ao contratado - FTTH",
-        "etiqueta_externo": "Plano não chega ao contratado - FTTH",
+        "etiqueta": "Plano não chega o contratado - FTTH",
+        "etiqueta_externo": "Plano não chega o contratado - FTTH",
         "servico": "Reparo Rápido"
     },
     {
@@ -355,8 +355,8 @@
         "mensagem": " relatou enfrentar problemas de instabilidade, pois a velocidade do plano contratado não está sendo alcançada na rede cabeada. Após verificar que o sinal óptico na sua PON está dentro dos padrões, realizamos os procedimentos padrão, conforme documentados nos registros de eventos, e recomendamos alguns procedimentos manuais usuais, incluindo o reinício do computador. Após essas verificações, realizamos um teste adicional no velocímetro; no entanto, a velocidade continuou na mesma média de 90 Mbps. Verificamos que o cabo de rede é CAT. 5E e, ao examinar a placa de rede, identificamos que o problema está sendo ocasionado pela placa de rede FE (/100). O cliente está ciente dessa situação, mas deseja a visita de uma equipe para confirmar que está recebendo o serviço contratado. Diante disso, geramos uma Ordem de Serviço (O.S.) para realizar uma inspeção presencial no local. Agendado de acordo com a disponibilidade do cliente.",
         "externo": true,
         "aguardar": false,
-        "etiqueta": "Plano não chega ao contratado - FTTH",
-        "etiqueta_externo": "Plano não chega ao contratado",
+        "etiqueta": "Plano não chega o contratado - FTTH",
+        "etiqueta_externo": "Plano não chega o contratado",
         "servico": "Reparo Rápido"
     },
     {
@@ -364,8 +364,8 @@
         "mensagem": "relatou enfrentar problemas de instabilidade, pois a velocidade do plano contratado não está sendo alcançada na rede sem fio. Verificado o sinal óptico de sua PON estava dentro dos padrões. Nesse contexto, explicamos sobre a garantia de entrega de velocidade apenas na rede cabeada e oferecemos um procedimento remoto para tentar melhorar, embora não pudéssemos garantir o mesmo desempenho na rede sem fio. Procedemos à execução dos procedimentos padrões, conforme documentados nos registros de eventos, e solicitamos alguns procedimentos manuais usuais, incluindo o reinício do aparelho usado para testar. Apesar dessas verificações, o teste no velocímetro ainda indicou uma velocidade inferior à garantida. Diante dessa situação, o cliente solicitou a presença de uma equipe no local, com um notebook e cabo de rede da Brisanet para uma inspeção direta e comprovação da entrega do plano. Foi gerada uma Ordem de Serviço (O.S.) para efetuar essa inspeção. Agendado de acordo com a disponibilidade do cliente.",
         "externo": true,
         "aguardar": false,
-        "etiqueta": "Plano não chega ao contratado - FTTH",
-        "etiqueta_externo": "Plano não chega ao contratado",
+        "etiqueta": "Plano não chega o contratado - FTTH",
+        "etiqueta_externo": "Plano não chega o contratado",
         "servico": "Reparo Rápido"
     },
     {
@@ -373,8 +373,8 @@
         "mensagem": "relatou estar enfrentando problemas de instabilidade, pois a velocidade do plano contratado não está sendo alcançada na rede sem fio. Verificamos que o sinal óptico de sua PON estava dentro dos padrões. Nesse contexto, explicamos sobre a garantia de entrega de velocidade apenas na rede cabeada e oferecemos um procedimento remoto para tentar melhorar, embora não pudéssemos garantir o mesmo desempenho na rede sem fio. Procedemos à execução dos procedimentos padrões, conforme documentados nos registros de eventos, e solicitamos alguns procedimentos manuais usuais, incluindo o reinício do aparelho usado para testar. Apesar dessas verificações, o teste no velocímetro ainda indicou uma velocidade inferior à garantida. Diante dessa situação, o cliente ficou de realizar o teste no cabo quando puder. ",
         "externo": false,
         "aguardar": false,
-        "etiqueta": "Plano não chega ao contratado - FTTH",
-        "etiqueta_externo": "Plano não chega ao contratado - FTTH",
+        "etiqueta": "Plano não chega o contratado - FTTH",
+        "etiqueta_externo": "Plano não chega o contratado - FTTH",
         "servico": "Reparo Rápido"
     },
     {
