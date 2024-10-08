@@ -510,25 +510,40 @@
                     if (passo[1] === 'Selecione os problemas') {
                         // Seleciona o campo de input dentro da div com a classe específica
                         let inputInserirProblema = document.querySelector('.ant-select-search__field');
-            
+                    
                         // Verifica se o campo foi encontrado
                         if (inputInserirProblema) {
                             // Insere o texto "pon piscando" no campo
                             inputInserirProblema.value = tipoProblema;
-                            
+                    
                             // Dispara o evento 'input' para simular uma digitação real e acionar os ouvintes de eventos associados
                             let inserirProblema = new Event('input', { bubbles: true });
                             inputInserirProblema.dispatchEvent(inserirProblema);
-            
-                            // Espera um pouco antes de clicar no elemento "pon piscando"
+                    
+                            // Espera um pouco antes de tentar clicar no elemento "pon piscando"
                             await new Promise(resolve => setTimeout(resolve, 200));
-            
-                            // Clica no elemento "pon piscando", insensível a maiúsculas/minúsculas
-                            await clickElement('.ant-select-dropdown-menu-item', tipoProblema);
+                    
+                            // Função que tenta clicar no elemento até que o clique seja bem-sucedido
+                            let tentarClicar = setInterval(async () => {
+                                let elementoProblema = Array.from(document.querySelectorAll('.ant-select-dropdown-menu-item'))
+                                    .find(el => el.textContent.trim().toLowerCase() === tipoProblema.toLowerCase());
+                    
+                                if (elementoProblema) {
+                                    // Se o elemento for encontrado, clica nele
+                                    elementoProblema.click();
+                    
+                                    // Cancela o setInterval
+                                    clearInterval(tentarClicar);
+                                    console.log('Elemento clicado com sucesso!');
+                                } else {
+                                    console.log('Tentando clicar no elemento...');
+                                }
+                            }, 200); // Tenta a cada 200ms
                         } else {
                             console.log('Campo de input não encontrado');
                         }
                     }
+                    
                 }
             }
             
@@ -539,7 +554,7 @@
             if (selectedItem.externo === true) {
                 setTimeout(() => {
                     encaminharExterno();
-                }, 2000);
+                }, 2500);
                 
             }
             
