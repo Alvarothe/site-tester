@@ -358,8 +358,6 @@
                 servicoExterno: selectedItem.servico
             };
             const etiqueta = selectedItem.etiqueta.toLowerCase();
-            var etiquetaExterno = selectedItem.etiqueta_externo
-            var servicoExterno = selectedItem.servico
             //teste
             searchInput.addEventListener('focus', () => {
                         populateDropdown();
@@ -368,8 +366,6 @@
             // Limpa o campo de pesquisa.
             searchInput.value = '';
             populateDropdown();
-            //debug
-            console.log('Informações do atendimento:', atendimentoInfo);
             //ocutar a interface
             document.querySelector('.openButton').click();
 
@@ -442,6 +438,10 @@
                         if (concludeElement) {
                             concludeElement.click();
                         }
+                        //verifica necessidade de encaminhar externo:
+                        if (selectedItem.externo === true) {
+                            encaminharExterno();       
+                        }
                         clearInterval(seletorDeEtiqueta);
                     }
                 });
@@ -450,9 +450,8 @@
             // Verifica a cada 600ms
             const seletorDeEtiqueta = setInterval(verificarElemento, 600);
 
-            //encaminhar externo
 
-            
+            //encaminhar externo
             async function clickElement(selector, text) {
                 const element = Array.from(document.querySelectorAll(selector))
                     .find(el => el.textContent.trim().toLowerCase() === text.toLowerCase());
@@ -543,26 +542,15 @@
                             console.log('Campo de input não encontrado');
                         }
                     }
-                    
+
                 }
-            }
-            
-            
+            }  
+        }); 
+
+        
 
 
-            //verifica necessidade de encaminhar externo:
-            if (selectedItem.externo === true) {
-                setTimeout(() => {
-                    encaminharExterno();
-                }, 2500);
-                
-            }
-            
-        }); //final finalize button.
-
-
-
-        // Faz atualização dos input dentro da mensagem e das etiquetas
+        // Faz atualização dos input dentro da mensagem e das etiquetas2
         function updateMessage() {
             const selectedItem = data[currentIndex];
             externoValue.textContent = selectedItem.externo ? 'Sim' : 'Não';
@@ -579,4 +567,5 @@
     createToggleOpenButton();
     const data = await fetchJsonData();
     createInterface(data);
+    console.log('teste')
 })();
