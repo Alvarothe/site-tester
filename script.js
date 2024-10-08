@@ -156,7 +156,7 @@
                 position: absolute;
                 background-color: rgba(0, 0, 0, 0.6);
                 width: 100%;
-                max-height: 170px;
+                max-height: 400px;
                 overflow-y: auto;
                 border: 1px solid #ff8c00;
                 border-radius: 3px;
