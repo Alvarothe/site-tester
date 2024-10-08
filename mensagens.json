@@ -50,7 +50,7 @@
         "externo": false,
         "aguardar": false,
         "etiqueta": "PON piscando - FTTH",
-        "etiqueta_externo": "PON piscando - FTTH",
+        "etiqueta_externo": "PON Piscando",
         "servico": "Reparo Físico"
     },
     {
@@ -59,7 +59,7 @@
         "externo": true,
         "aguardar": false,
         "etiqueta": "PON piscando - FTTH",
-        "etiqueta_externo": "PON piscando - FTTH",
+        "etiqueta_externo": "PON Piscando",
         "servico": "Reparo Físico"
     },
     {
@@ -68,7 +68,7 @@
         "externo": false,
         "aguardar": false,
         "etiqueta": "PON piscando - FTTH",
-        "etiqueta_externo": "PON piscando - FTTH",
+        "etiqueta_externo": "PON Piscando",
         "servico": "Reparo Físico"
     },
     {
@@ -76,7 +76,7 @@
         "mensagem": "Entrou em contato informando que os serviços da Brisanet estão sem sinal. Ao ser questionado sobre a ativação da LED PON e a ocorrência de acidentes ou remoção de equipamento, o cliente negou qualquer incidente. Após verificar que a rota está normal, procedeu-se à reconfiguração e reinicialização do modem ONU, além de conectá-lo em outra tomada de energia. O cliente reportou que o acesso foi normalizado.",
         "externo": false,
         "aguardar": false,
-        "etiqueta": "PON apagada - FTTH",
+        "etiqueta": "PON Apagada",
         "etiqueta_externo": "PON apagada - FTTH",
         "servico": "Reparo Físico"
     },
@@ -86,7 +86,7 @@
         "externo": true,
         "aguardar": false,
         "etiqueta": "PON apagada - FTTH",
-        "etiqueta_externo": "PON apagada - FTTH",
+        "etiqueta_externo": "PON Apagada",
         "servico": "Reparo Físico"
     },
     {
@@ -149,7 +149,7 @@
         "externo": false,
         "aguardar": false,
         "etiqueta": "Lentidão - FTTH",
-        "etiqueta_externo": "Lentidão",
+        "etiqueta_externo": "Lentidao",
         "servico": "Reparo Rápido"
     },
     {
@@ -158,7 +158,7 @@
         "externo": true,
         "aguardar": false,
         "etiqueta": "Lentidão - FTTH",
-        "etiqueta_externo": "Lentidão",
+        "etiqueta_externo": "Lentidao",
         "servico": "Reparo Rápido"
     },
     {
@@ -167,7 +167,7 @@
         "externo": false,
         "aguardar": false,
         "etiqueta": "Lentidão - FTTH",
-        "etiqueta_externo": "Lentidão",
+        "etiqueta_externo": "Lentidao",
         "servico": "Reparo Rápido"
     },
     {
@@ -176,7 +176,7 @@
         "externo": true,
         "aguardar": false,
         "etiqueta": "Lentidão - FTTH",
-        "etiqueta_externo": "Lentidão",
+        "etiqueta_externo": "Lentidao",
         "servico": "Reparo Rápido"
     },
     {
