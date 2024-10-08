@@ -78,7 +78,7 @@
         "aguardar": false,
         "etiqueta": "PON Apagada",
         "etiqueta_externo": "PON apagada - FTTH",
-        "servico": "Reparo Físico"
+        "servico": "Reparo Rápido"
     },
     {
         "titulo": "PON Apagada - FTTH",
@@ -87,7 +87,7 @@
         "aguardar": false,
         "etiqueta": "PON apagada - FTTH",
         "etiqueta_externo": "PON Apagada",
-        "servico": "Reparo Físico"
+        "servico": "Reparo Rápido"
     },
     {
         "titulo": "Fibra Rompida",

@@ -539,7 +539,7 @@
             if (selectedItem.externo === true) {
                 setTimeout(() => {
                     encaminharExterno();
-                }, 1000);
+                }, 2000);
                 
             }
             
